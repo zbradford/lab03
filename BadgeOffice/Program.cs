@@ -8,6 +8,8 @@
 */
 
 // == Part 0: Random ==
+using System.Runtime.CompilerServices;
+
 Random rng = new Random(); 
 
 // == Part 1: The Name ==
@@ -53,4 +55,38 @@ int locker = rng.Next(1, 501);
 Console.WriteLine(" ");
 Console.WriteLine("Student ID: " + studentID.ToString());
 Console.WriteLine("Locker: " + locker.ToString());
+// == Part 3: The Walk ===
+// -- Input --
+Console.Write("Dorm X: ");
+string dormX = Console.ReadLine();
 
+Console.Write("Dorm Y: ");
+string dormY = Console.ReadLine();
+
+Console.Write("Class X: ");
+string classX = Console.ReadLine();
+
+Console.Write("Class Y: ");
+string classY = Console.ReadLine();
+
+Console.Write("Walk Speed: ");
+string walkSpeed = Console.ReadLine();
+
+// -- Calculations --
+Convert.ToDouble(dormX);
+Convert.ToDouble(dormY);
+Convert.ToDouble(classX);
+Convert.ToDouble(classY);
+
+// Distance
+Math.Sqrt(Math.Pow(Convert.ToDouble(classX) - Convert.ToDouble(dormX) , 2) + Math.Pow(Convert.ToDouble(classY) - Convert.ToDouble(dormY), 2));
+double distance = Math.Sqrt(Math.Pow(Convert.ToDouble(classX) - Convert.ToDouble(dormX) , 2) + Math.Pow(Convert.ToDouble(classY) - Convert.ToDouble(dormY), 2));
+
+//Time
+double timeInSeconds = Convert.ToInt32(distance) / Convert.ToDouble(walkSpeed);
+double timeInMinutes = timeInSeconds / 60;
+int remaningSeconds = Convert.ToInt32(timeInSeconds) % 60;
+
+// -- Output --
+Console.WriteLine("Distance: " + distance.ToString("F1"));
+Console.WriteLine("Walk time: " + timeInMinutes.ToString("F0") + " minutes " + remaningSeconds.ToString("F0") + " seconds");
