@@ -41,7 +41,6 @@ Console.WriteLine("Name on badge: " + nameOnBadge);
 Console.WriteLine("Username: " + username);
 Console.WriteLine("Initials: " + initials.ToUpper());
 Console.WriteLine("Letters in last name: " + letterInLastName.ToString());
-
 // == Part 2: The Numbers ==
 // -- Calculations --
 // Student ID
@@ -55,26 +54,3 @@ Console.WriteLine(" ");
 Console.WriteLine("Student ID: " + studentID.ToString());
 Console.WriteLine("Locker: " + locker.ToString());
 
-// == Part 3: The Walk ===
-// -- Input --
-Console.Write("Dorm X: ");
-string dormX = Console.ReadLine();
-
-Console.Write("Dorm Y: ");
-string dormY = Console.ReadLine();
-
-Console.Write("Class X: ");
-string classX = Console.ReadLine();
-
-Console.Write("Class Y: ");
-string classY = Console.ReadLine();
-
-Console.Write("Walk Speed: ");
-string walkSpeed = Console.ReadLine();
-
-// -- Calculations --
-Convert.ToDouble(dormX);
-Convert.ToDouble(dormY);
-Convert.ToDouble(classX);
-Convert.ToDouble(classY);
-double distance = Math.Sqrt(Math.Pow(Convert.ToDouble(classX) - Convert.ToDouble(dormX) , 2) + Math.Pow(Convert.ToDouble(classY) - Convert.ToDouble(dormY), 2));
