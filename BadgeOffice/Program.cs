@@ -8,6 +8,7 @@
 */
 
 // == Part 0: Random ==
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 Random rng = new Random(); 
@@ -55,6 +56,7 @@ int locker = rng.Next(1, 501);
 Console.WriteLine(" ");
 Console.WriteLine("Student ID: " + studentID.ToString());
 Console.WriteLine("Locker: " + locker.ToString());
+Console.WriteLine(" ");
 // == Part 3: The Walk ===
 // -- Input --
 Console.Write("Dorm X: ");
@@ -69,7 +71,7 @@ string classX = Console.ReadLine();
 Console.Write("Class Y: ");
 string classY = Console.ReadLine();
 
-Console.Write("Walk Speed: ");
+Console.Write("Walking speed in feet per second: ");
 string walkSpeed = Console.ReadLine();
 
 // -- Calculations --
@@ -88,5 +90,21 @@ double timeInMinutes = timeInSeconds / 60;
 int remaningSeconds = Convert.ToInt32(timeInSeconds) % 60;
 
 // -- Output --
+Console.WriteLine(" ");
 Console.WriteLine("Distance: " + distance.ToString("F1"));
 Console.WriteLine("Walk time: " + timeInMinutes.ToString("F0") + " minutes " + remaningSeconds.ToString("F0") + " seconds");
+
+// == Part 4: The Badge ===
+// -- Calculations --
+int checkDigit = studentID % 9;
+
+// -- Output --
+Console.WriteLine(" ");
+Console.WriteLine("==================================");
+Console.WriteLine(" ETSU STUDENT BAGDE");
+Console.WriteLine("==================================");
+Console.WriteLine("NAME        " + nameOnBadge);
+Console.WriteLine("USERNAME    " + username);
+Console.WriteLine("ID          " + studentID + "-" + checkDigit);
+Console.WriteLine("Locker      " + locker);
+Console.WriteLine("Walk        " + timeInMinutes.ToString("F0") + " min " + remaningSeconds.ToString("F0") + " sec");
